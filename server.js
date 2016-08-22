@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
+var fakearray = require('./models/fakearray.js');
 
-
+console.log(fakearray);
 app.get('/', function(request, response){
   response.render('index.ejs');
 });
