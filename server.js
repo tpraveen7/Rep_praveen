@@ -3,8 +3,7 @@ var app = express();
 
 
 app.get('/', function(request, response){
-  response.send( 'oh hello hai');
-
+  response.render('index.ejs');
 });
 
 app.listen(3000,function(){
