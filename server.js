@@ -1,16 +1,18 @@
 var express = require('express');
 var app = express();
-var fakearray = require('./model/fakearray.js');
+var bodyParser = require('body-parser');
 var PORT = process.env.PORT || 3000;
 
-var runController = requier('./controllers/runs.js');
-app.use('/runs', runController);
 
+app.use(bodyParser.json());
+
+var runController = require('./controllers/runs.js');
+app.use('/runs', runController);
 
 
 app.get('/', function(request, response){
   response.render('index.ejs', {
-    dataArray:fakearray
+
   });
 });
 
