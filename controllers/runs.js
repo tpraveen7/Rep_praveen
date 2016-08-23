@@ -1,6 +1,6 @@
 var express = require('express');
 var controller = express.Router();
-var runs = require('../model/runs.js');
+var Run = require('../model/runs.js');
 
 
 
@@ -14,9 +14,14 @@ controller.get('/:id', function(req, res){
 });
 
 controller.post('/', function(req, res){
-  runs.push(req.body);
-  res.json(runs);
+  Run.create({
+    date: new Date('2016-8-23'),
+    distance: 4.5
+  }). then(function(createdRun){
+    res.json(createdRun);
+  });
 });
+
 
 controller.put('/:id', function(req, res){
   runs[req.params.id] = req.body;
