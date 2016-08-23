@@ -11,10 +11,6 @@ controller.get('/', function (req, res){
 });
 
 
-controller.get('/:id', function(req, res){
-  res.json(runs[req.params.id]);
-});
-
 
 controller.get('/:id', function(req, res){
 Run.findById(req.params.id).then(function(foundRuns){
