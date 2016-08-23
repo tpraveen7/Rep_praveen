@@ -14,10 +14,7 @@ controller.get('/:id', function(req, res){
 });
 
 controller.post('/', function(req, res){
-  Run.create({
-    date: new Date('2016-8-23'),
-    distance: 4.5
-  }). then(function(createdRun){
+  Run.create(req.body). then(function(createdRun){
     res.json(createdRun);
   });
 });
