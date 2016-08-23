@@ -27,6 +27,20 @@ controller.put('/:id', function(req, res){
   res.json(runs);
 });
 
+controller.delete('/:id', function(req, res){
+  Run.destroy({
+    where:{
+      id: req.params.id
+    }
+  }).then(function(disSucceed){
+    res.json(didSucceed);
+  });
+
+});
+
+
+
+
 
 controller.delete('/:id', function(req, res){
   runs.splice(req.params.id, 1);
