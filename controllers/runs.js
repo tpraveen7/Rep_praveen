@@ -5,7 +5,9 @@ var Run = require('../model/runs.js');
 
 
 controller.get('/', function (req, res){
-  res.json(runs);
+  Run.findAll({}).then(function(foundRuns){
+    res.json(foundRuns);
+  });
 });
 
 
