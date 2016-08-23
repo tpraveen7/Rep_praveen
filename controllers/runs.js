@@ -32,7 +32,7 @@ controller.delete('/:id', function(req, res){
     where:{
       id: req.params.id
     }
-  }).then(function(disSucceed){
+  }).then(function(didSucceed){
     res.json(didSucceed);
   });
 
