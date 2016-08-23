@@ -3,6 +3,22 @@ var app = express();
 var fakearray = require('./model/fakearray.js');
 var PORT = process.env.PORT || 3000;
 
+app.use(function(req, res, next){
+  console.log('middleware doing stuff');
+  next();
+})
+
+app.use(function(req, res, next){
+  console.log('second middleware doing stuff');
+  next();
+})
+
+
+app.use(function(req, res, next){
+  console.log('Third middleware doing stuff');
+  next();
+})
+
 console.log(fakearray);
 app.get('/', function(request, response){
   response.render('index.ejs', {
