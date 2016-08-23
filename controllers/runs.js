@@ -15,6 +15,16 @@ controller.get('/:id', function(req, res){
   res.json(runs[req.params.id]);
 });
 
+
+controller.get('/:id', function(req, res){
+Run.findById(req.params.id).then(function(foundRuns){
+  res.json(foundruns);
+});
+
+});
+
+
+
 controller.post('/', function(req, res){
   Run.create(req.body). then(function(createdRun){
     res.json(createdRun);
