@@ -33,7 +33,7 @@ var render = function(){
 
 
   //  console.log(data);
-var circles = d3.select('svg').selectAll('circle').data(data, function(datum){
+var circles = d3.select('#points').selectAll('circle').data(data, function(datum){
   return datum.id;
    });
 
@@ -113,10 +113,24 @@ d3.select('svg').on('click',function(){
 var leftAxis = d3.axisLeft(yScale);
 d3.select('svg')
 .append('g')
+.attr('id', 'y-axis')
 .call(leftAxis);
 
 var botAxis = d3.axisBottom(xScale);
 d3.select('svg')
 .append('g')
+.attr('id', 'x-axis')
 .attr("transform", "translate(0," +HEIGHT+")")
 .call(botAxis);
+
+
+var zoomCallback = function(){
+d3.select('#points')
+.attr("transform", d3.event.transform);
+d3.select('#x-axis').call(botAxis.scale(d3.event.transform.rescaleX(xScale)));
+d3.select('#y-axis').call(leftAxis.scale(d3.event.transform.rescaleY(yScale)));
+
+}
+var zoom = d3.zoom()
+.on('zoom', zoomCallback);
+d3.select('svg').call(zoom);
