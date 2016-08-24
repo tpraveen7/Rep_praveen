@@ -11,10 +11,15 @@ d3.select('svg')
   .attr('height', HEIGHT);
 
 var yScale = d3.scaleLinear();
+var xScale = d3.scaleTime();
 
 yScale.range = ([HEIGHT, 0]);
 yScale.domain = ([0, 5]);
 
+xScale.range([0,WIDTH]);
+xScale.domain([new Date('2016-1-1'), new Date(2017-1-1)])
+
+// console.log(xScale(new Date('2016-8-1')));
 // console.log(yScale(0.1));
 // console.log(yScale.invert(490));
 
@@ -35,6 +40,11 @@ d3
   .attr('cy', function(datum, index){
 console.log(datum);
 return yScale(datum.distance );
+})
+
+.attr('cx', function(datum, index){
+console.log(datum.date);
+return xScale(new Date(datum.date));
 
   });
 
