@@ -90,9 +90,20 @@ circles.exit().remove();
 };
 
 render();
+
+var lastTransform = null;
 d3.select('svg').on('click',function(){
-  var distance = yScale.invert(d3.event.offsetY);
-  var date = xScale.invert(d3.event.offsetX);
+var x = d3.event.offsetX;
+var y = d3.event.offsetY;
+
+if(lastTransform !== null){
+  x = lastTransform.invertX(x);
+  y = lastTransform.invertY(y);
+}
+
+
+  var distance = yScale.invert(y);
+  var date = xScale.invert(x);
 
   var  runObject = {
     distance: distance,
@@ -125,6 +136,7 @@ d3.select('svg')
 
 
 var zoomCallback = function(){
+  lastTransform = d3.event.transform;
 d3.select('#points')
 .attr("transform", d3.event.transform);
 d3.select('#x-axis').call(botAxis.scale(d3.event.transform.rescaleX(xScale)));
