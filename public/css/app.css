@@ -6,7 +6,9 @@ svg{
   /*border:2px solid black;*/
   overflow: visible;
 }
-
+#container{
+  overflow: hidden;
+}
 circle{
 r: 5;
 fill:black;
