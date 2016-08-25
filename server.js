@@ -9,8 +9,12 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.json());
 
+
 var runController = require('./controllers/runs.js');
 app.use('/runs', runController);
+
+var runController = require('./controllers/users.js');
+app.use('/users', runController);
 
 
 app.get('/', function(request, response){
