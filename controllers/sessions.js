@@ -15,13 +15,18 @@ controller.post('/', function(req, res){
           name: req.body.name
         }
         }).then(function(foundUser){
-          if(foundUser.password == req.body.password){
+          if(foundUser.password == req.body.password) {
             req.session.currentUser = foundUser;
             res.redirect('/');
 
-          }else {
+           } else {
             res.redirect('/sessions/new');
           }
         });
+});
+controller.delete('/', function(req, res) {
+  req.session.destroy(function() {
+    res.redirect('/');
+  })
 });
 module.exports = controller;

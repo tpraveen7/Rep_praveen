@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var User = require('../model/users.js');
 
 
+
+
 controller.use(bodyParser.urlencoded({
   extended:true
 }));
