@@ -156,6 +156,26 @@ if(lastTransform !== null){
 // console.log(distance);
 })
 
+// json('/runs', function(error, data){
+//
+//   var distanceDomain = d3.extent(data)
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var leftAxis = d3.axisLeft(yScale);
 d3.select('svg')
 .append('g')
