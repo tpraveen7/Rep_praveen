@@ -40,7 +40,29 @@ var maxDistance = d3.max(data, function(element){
    return element.date;
  });
 
+ var minDistance = d3.min(data, function(element){
+  return element.distance;
+  });
+
+  var minDate = d3.min(data, function(element){
+    return element.date;
+  });
+
+  var distanceDomain = d3.extent(data, function(element){
+   return element.distance;
+   });
+
+   var dateDomain = d3.extent(data, function(element){
+     return element.date;
+   });
+
+
+
  console.log(maxDistance, maxDate);
+ console.log(minDistance, minDate);
+ console.log(distanceDomain, dateDomain);
+
+
 
 
 
