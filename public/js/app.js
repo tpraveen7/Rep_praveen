@@ -32,6 +32,19 @@ var render = function(){
       .json('/runs', function(error, data){
 
 
+var maxDistance = d3.max(data, function(element){
+ return element.distance;
+ });
+
+ var maxDate = d3.max(data, function(element){
+   return element.date;
+ });
+
+ console.log(maxDistance, maxDate);
+
+
+
+
   //  console.log(data);
 var circles = d3.select('#points').selectAll('circle').data(data, function(datum){
   return datum.id;
