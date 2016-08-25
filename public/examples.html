@@ -2,11 +2,57 @@
 <html>
   <head>
     <link rel="stylesheet" href="/css/examples.css">
+
+<!-- /*<style media="screen">
+rect{
+    transition: height 1s ease-in-out;
+}
+</style>
+<script>
+window.setTimeout(function(){
+  document.querySelector('rect').setAttribute('height', '500');
+}, 1000);
+</script >*/ -->
+
 </head>
+
+
+
   <body>
     <h1>WELCOME SVG</h1>
     <svg>
-             <circle r='100' cx="300 cy="300" fill="blue" stroke="red"></circle>
+//           <!-- <line x1="0" y1="0"  x2="200" y2="100" stroke="purple"/>
+//
+//           <rect x="500" y="20" width="150" height="150" fill="red" stroke="blue" />
+//
+//           <ellipse cx="200" cy="80" rx="100" ry="50" fill="green"/>
+//           <polyline points="20, 20, 40, 25, 60, 40 80, 120, 120, 140, 200, 180" stroke="red" fill="green"/>
+//           <polygon points="600,110 450,190, 160, 210, 190, 190" />
+// <g transform="translate(50,100) scale(2) rotate(45)">
+//
+//              <circle r='10' cx="30 cy="300" fill="blue" stroke="red"></circle>
+//            </g> -->
+//
+           <path d="M160 40 l 20 20 l 10 0 Z"
+           stroke="black" fill="none"/>
+
+           <path d="M200 100 q 25 50, 50 0 t 50 0 t 50 0"
+              stroke="black"  fill="none"/>
+
+
+              <path d="M100 100 c 0 100 100 100  100 0
+              s 100 -100
+                100 100
+                100 -100
+                100 100
+                100 100
+                100 100
+                100 -100
+                100 -100"
+                 stroke="black"  fill="none"/>
+
+  <!-- // <rect x="30" y="10" width="100" height="300"  stroke="grey" fill="red"|/> -->
+
     </svg>
   </body>
 </html>

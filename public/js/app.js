@@ -146,3 +146,14 @@ d3.select('#y-axis').call(leftAxis.scale(d3.event.transform.rescaleY(yScale)));
 var zoom = d3.zoom()
 .on('zoom', zoomCallback);
 d3.select('svg').call(zoom);
+
+
+// date formats
+var dateString = '20160801';
+var dateFormat = '%Y%m%d';
+
+var parseSAPDateString = d3.timeParse(dateFormat);
+// console.log(parseSAPDateString(dateString));
+
+var formatDateSAP = d3.timeFormat(dateFormat);
+// console.log(formatDateSAP(new Date()));
